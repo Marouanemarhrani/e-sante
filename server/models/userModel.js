@@ -1,41 +1,54 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    firstname: {
-        type: String,
-        required: true,
-        trim: true,
+  username: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    trim: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  phone: {    // New field
+    type: String,
+    required: true
+  },
+  address: {   // New field
+    type: String,
+    required: true
+  },
+  role: {
+    type: String,
+    enum: ['Senior', 'Tuteur'],
+    required: true
+  },
+  tuteurs: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Tuteur'
+  }],
+  subscription: {
+    plan: {
+      type: String,
+      enum: ['free', 'premium', 'enterprise'],
+      default: 'free'
     },
-    lastname: {
-        type: String,
-        required: true,
-        trim: true,
+    status: {
+      type: String,
+      enum: ['active', 'inactive', 'cancelled'],
+      default: 'inactive'
     },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-        trim: true,
-        match: [/^\S+@\S+\.\S+$/, 'Please use a valid email address'],
-    },
-    password: {
-        type: String,
-        required: true,
-    },
-    phone: {
-        type: String,
-        required: true,
-        trim: true,
-        match: [/^\+?[1-9]\d{1,14}$/, 'Please use a valid phone number'],
-    },
-    address: {
-        type: String,
-        required: true,
-    },
-    role: {
-        type: Number,
-        default: 0,
+    renewalDate: {
+      type: Date
     }
+  }
 }, { timestamps: true });
 
-module.exports = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema);
+module.exports = User;

@@ -1,0 +1,97 @@
+/* Style global du footer */
+.footer {
+    background-color: #004d40;  /* Vert foncé pour l'aspect santé */
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Style des sections de liens */
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .footer-link-section {
+    margin: 10px 20px;
+  }
+  
+  .footer-link-section h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #e0f2f1;
+  }
+  
+  .footer-link-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-link-section ul li {
+    margin: 5px 0;
+  }
+  
+  .footer-link-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link-section ul li a:hover {
+    color: #80cbc4;  /* Couleur claire pour le hover */
+  }
+  
+  /* Section des réseaux sociaux */
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  
+  .social-icons a {
+    margin: 0 10px;
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #80cbc4;  /* Couleur claire pour le hover des icônes */
+  }
+  
+  /* Style du copyright */
+  .footer-copyright {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #e0f2f1;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .footer-links {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-link-section {
+      margin: 20px 0;
+    }
+  
+    .social-icons {
+      margin-top: 10px;
+    }
+  }
+  

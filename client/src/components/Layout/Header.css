@@ -1,0 +1,192 @@
+/* Styles globaux pour le header */
+.header1 {
+    background-color: #00695c;  /* Couleur principale */
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .header2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header6 img.navbar-logo {
+    width: 140px;
+    height: auto;
+  }
+  
+  .header3 {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 1.5rem;
+    outline: none;
+  }
+  
+  .header4 {
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  /* Styles pour le menu de navigation */
+  .header5 ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header5 ul li {
+    margin: 0 15px;
+  }
+  
+  .header5 ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .header5 ul li a:hover {
+    color: #e0f2f1;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+  }
+  
+  /* Styles pour la zone utilisateur */
+  .header19 .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .header19 .nav-link:hover {
+    color: #e0f2f1;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+  }
+  
+  .header25 .dropdown {
+    color: white;
+    font-size: 1.8rem;
+    position: relative;
+  }
+  
+  .header26 .dropdown-menu {
+    background-color: #004d40;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .header27 .dropdown-item {
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .header27 .dropdown-item:hover {
+    background-color: #00796b;
+    color: #e0f2f1;
+  }
+  
+  /* Style bouton de déconnexion */
+  .header28 {
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+  
+  .header28:hover {
+    background-color: #00796b;
+    color: #e0f2f1;
+    cursor: pointer;
+  }
+  
+  /* Responsive Styles */
+  
+  /* Sur les petits écrans, le menu devient vertical */
+  @media (max-width: 992px) {
+    /* Menu réduit à un bouton hamburger */
+    .header5 {
+      flex-direction: column;
+    }
+  
+    .header5 ul {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 0;
+      display: none; /* Initialement caché, il s'affiche au clic du toggler */
+    }
+  
+    .header5 ul.show {
+      display: flex; /* Afficher en mode vertical lorsqu'on clique sur le bouton de toggler */
+    }
+  
+    .header5 ul li {
+      margin: 10px 0;
+    }
+  
+    .header3 {
+      font-size: 1.3rem;
+    }
+  
+    /* Agrandissement du bouton hamburger pour une meilleure accessibilité */
+    .header3 {
+      font-size: 2rem;
+    }
+  
+    /* Le dropdown devient vertical et occupe toute la largeur */
+    .header26 .dropdown-menu {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    /* Réduire la taille du logo sur les plus petits écrans */
+    .header6 img.navbar-logo {
+      width: 120px;
+    }
+  
+    /* Ajustement des liens pour une meilleure lisibilité */
+    .header5 ul li a {
+      font-size: 1rem;
+      padding: 10px 15px;
+    }
+  
+    .header19 .nav-link {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    /* Sur les très petits écrans, on réduit encore le logo */
+    .header6 img.navbar-logo {
+      width: 100px;
+    }
+  
+    /* Augmenter la taille du bouton de menu pour faciliter les interactions mobiles */
+    .header3 {
+      font-size: 2.5rem;
+    }
+  
+    /* Espacer davantage les éléments dans le menu pour faciliter le clic */
+    .header5 ul li {
+      margin: 15px 0;
+    }
+  
+    /* Ajuster la taille du texte */
+    .header5 ul li a {
+      font-size: 0.9rem;
+    }
+  }
+  

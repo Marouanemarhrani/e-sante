@@ -1,0 +1,83 @@
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #f4f7f6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+    color: #00695c; /* Couleur principale de ton projet de santé */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .about-text {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+  
+  .about-text strong {
+    color: #004d40; /* Une couleur légèrement plus foncée pour les accents */
+  }
+  
+  @media (max-width: 768px) {
+    .about-container {
+      padding: 20px;
+    }
+  
+    .about-title {
+      font-size: 2rem;
+    }
+  
+    .about-text {
+      font-size: 1rem;
+    }
+  }
+  .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #f4f7f6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+    color: #00695c; /* Couleur principale de ton projet de santé */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .about-text {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+  
+  .about-text strong {
+    color: #004d40; /* Une couleur légèrement plus foncée pour les accents */
+  }
+  
+  @media (max-width: 768px) {
+    .about-container {
+      padding: 20px;
+    }
+  
+    .about-title {
+      font-size: 2rem;
+    }
+  
+    .about-text {
+      font-size: 1rem;
+    }
+  }
+    
