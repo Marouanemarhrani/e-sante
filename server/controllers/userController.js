@@ -131,4 +131,32 @@ const getTuteurById = async (req, res) => {
   }
 };
 
-module.exports = { registerSenior, loginUser, createTuteur, updateUserProfile, getTuteurById };
+// Update Mood Controller
+const updateUserMood = async (req, res) => {
+  try {
+    const { mood } = req.body;
+    const userId = req.user._id; // Assuming the user ID is available in the request
+
+    // Update the user's mood in the database
+    const updatedUser = await User.findByIdAndUpdate(
+      userId, 
+      { mood }, 
+      { new: true }
+    );
+
+    if (!updatedUser) {
+      return res.status(404).json({ success: false, message: 'Utilisateur non trouvé' });
+    }
+
+    return res.status(200).json({ success: true, message: 'Humeur mise à jour avec succès', updatedUser });
+  } catch (error) {
+    console.error('Erreur lors de la mise à jour de l\'humeur:', error);
+    res.status(500).json({ success: false, message: 'Erreur serveur lors de la mise à jour de l\'humeur' });
+  }
+};
+
+module.exports = { updateUserMood };
+
+  
+
+module.exports = { registerSenior, loginUser, createTuteur, updateUserProfile, getTuteurById, updateMood };

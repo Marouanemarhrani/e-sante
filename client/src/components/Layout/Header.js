@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 import { useAuth } from '../../context/auth';
 import toast from 'react-hot-toast';
 import { AiOutlineUser } from 'react-icons/ai';
-import './Header.css'; // Les styles CSS spécifiques au Header
+import './Header.css';
 
 const Header = () => {
   const [auth, setAuth] = useAuth();
@@ -20,99 +20,50 @@ const Header = () => {
 
   return (
     <>
-      <nav className="header1 navbar navbar-expand-lg">
-        <div className="header2 container-fluid">
-          {/* Logo visible à tout moment */}
-          <Link to="/" className="header6 navbar-brand">
-            Mate
+      <nav className="navbar header-navbar">
+        <div className="container-fluid header-container">
+          {/* Logo Section */}
+          <Link to="/" className="navbar-brand header-logo">
+            MateSync
           </Link>
 
-          {/* Bouton de toggler pour le menu mobile */}
-          <button 
-            className="header3 navbar-toggler" 
-            type="button" 
-            data-bs-toggle="collapse" 
-            data-bs-target="#navbarTogglerDemo01" 
-            aria-controls="navbarTogglerDemo01" 
-            aria-expanded="false" 
-            aria-label="Toggle navigation"
-          >
-            <span className="header4 navbar-toggler-icon" />
-          </button>
+          {/* Navigation Links */}
+          <div className="header-nav">
+            <NavLink to="/" className="nav-link">
+              Accueil
+            </NavLink>
+            <NavLink to="/about" className="nav-link">
+              À propos
+            </NavLink>
+            <NavLink to="/contact" className="nav-link">
+              Contact
+            </NavLink>
+          </div>
 
-          {/* Collapsible part of the navbar */}
-          <div className="header5 collapse navbar-collapse" id="navbarTogglerDemo01">
-            <ul className="header7 navbar-nav mb-2 mb-lg-0">
-              <li className="header8 nav-item">
-                <Link className="header9 nav-link" to="/">
-                  Accueil
-                </Link>
-              </li>
-              <li className="header13 nav-item">
-                <Link className="header14 nav-link" to="/about">
-                  À propos
-                </Link>
-              </li>
-              <li className="header13 nav-item">
-                <Link className="header14 nav-link" to="/contact">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-
-            <ul className="header19 navbar-nav ms-auto mb-2 mb-lg-0">
-              {!auth?.user ? (  // Vérification si l'utilisateur est authentifié
-                <>
-                  <li className="header20 nav-item">
-                    <NavLink to="/register" className="header21 nav-link">
-                      Inscription
-                    </NavLink>
-                  </li>
-                  <li className="header22 nav-item">
-                    <NavLink to="/login" className="header23 nav-link">
-                      Connexion
-                    </NavLink>
-                  </li>
-                </>
-              ) : (
-                <>
-                  <li className="header24 nav-item dropdown">
-                    <NavLink 
-                      className="header25 nav-link dropdown" 
-                      href="#" 
-                      role="button" 
-                      data-bs-toggle="dropdown" 
-                      aria-expanded="false"
-                    >
-                      <AiOutlineUser />
-                    </NavLink>
-                    <ul className="header26 dropdown-menu">
-                      <li>
-                        <NavLink 
-                          to={`/dashboard/${
-                            auth?.user?.role === 'admin' ? 'admin' 
-                              : auth?.user?.role === 'senior' ? 'senior' 
-                              : 'tuteur'
-                          }`}
-                          className="header27 dropdown-item"
-                        >
-                          Dashboard
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink
-                          onClick={handleLogout}
-                          to="/login" 
-                          className="header28 dropdown-item"
-                        >
-                          Déconnexion
-                        </NavLink>
-                      </li>
-                    </ul>
-                  </li>
-                </>
-              )}
-            </ul>
+          {/* Auth Links (Login / Register or Dashboard / Logout) */}
+          <div className="header-auth">
+            {!auth?.user ? (
+              <>
+                <NavLink to="/register" className="nav-link">
+                  Inscription
+                </NavLink>
+                <NavLink to="/login" className="nav-link">
+                  Connexion
+                </NavLink>
+              </>
+            ) : (
+              <>
+                <NavLink
+                  to={`/dashboard/${auth?.user?.role === 'admin' ? 'admin' : auth?.user?.role === 'senior' ? 'senior' : 'tuteur'}`}
+                  className="nav-link"
+                >
+                  Dashboard
+                </NavLink>
+                <NavLink onClick={handleLogout} to="/login" className="nav-link">
+                  Déconnexion
+                </NavLink>
+              </>
+            )}
           </div>
         </div>
       </nav>

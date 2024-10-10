@@ -1,97 +1,105 @@
-/* Style global du footer */
+/* General footer styles */
 .footer {
-    background-color: #004d40;  /* Vert foncé pour l'aspect santé */
+    background-color: #004D40; /* Dark green background */
     color: white;
-    padding: 40px 0;
-    text-align: center;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    padding: 2rem 1rem;
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-  }
-  
-  /* Style des sections de liens */
-  .footer-links {
+    text-align: center;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-top: 2rem; /* Added space above the footer */
+}
+
+.footer-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-  }
-  
-  .footer-link-section {
-    margin: 10px 20px;
-  }
-  
-  .footer-link-section h4 {
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-    color: #e0f2f1;
-  }
-  
-  .footer-link-section ul {
-    list-style: none;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Footer links */
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.footer-link-section h4 {
+    margin-bottom: 1rem;
+}
+
+.footer-link-section ul {
+    list-style-type: none;
     padding: 0;
-  }
-  
-  .footer-link-section ul li {
-    margin: 5px 0;
-  }
-  
-  .footer-link-section ul li a {
+}
+
+.footer-link-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-link-section ul li a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-link-section ul li a:hover {
-    color: #80cbc4;  /* Couleur claire pour le hover */
-  }
-  
-  /* Section des réseaux sociaux */
-  .social-icons {
+    transition: color 0.3s;
+}
+
+.footer-link-section ul li a:hover {
+    color: #FFC107; /* Light yellow hover color */
+}
+
+/* Social icons */
+.social-icons {
     display: flex;
-    justify-content: center;
-    margin-top: 15px;
-  }
-  
-  .social-icons a {
-    margin: 0 10px;
-    color: white;
+    gap: 1.5rem;
+}
+
+.social-icons a {
     font-size: 1.5rem;
-    transition: color 0.3s ease;
-  }
-  
-  .social-icons a:hover {
-    color: #80cbc4;  /* Couleur claire pour le hover des icônes */
-  }
-  
-  /* Style du copyright */
-  .footer-copyright {
-    margin-top: 20px;
-    font-size: 0.9rem;
-    color: #e0f2f1;
-  }
-  
-  /* Responsiveness */
-  @media (max-width: 768px) {
-    .footer-links {
+    color: white;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #FFC107; /* Light yellow hover color */
+}
+
+/* Copyright section */
+.footer-copyright {
+    text-align: right;
+}
+
+.footer-copyright p {
+    margin: 0;
+}
+
+/* Responsive handling */
+@media (max-width: 768px) {
+    .footer {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .footer-container {
       flex-direction: column;
       align-items: center;
     }
-  
-    .footer-link-section {
-      margin: 20px 0;
+
+    .footer-links {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1rem;
     }
-  
+
     .social-icons {
-      margin-top: 10px;
+      justify-content: center;
+      margin-bottom: 1rem;
     }
-  }
-  
+
+    .footer-copyright {
+      text-align: center;
+    }
+}

@@ -4,6 +4,8 @@ import About from "./pages/About";
 import Pagenotfound from "./pages/Pagenotfound";
 import Register from "./pages/Auth/Register";
 import Login from "./pages/Auth/Login";
+import ContactPage from "./pages/Contact"; // Import the Contact Page
+
 function App() {
   return (
     <>
@@ -17,6 +19,8 @@ function App() {
 
         {/* Pages statiques */}
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<ContactPage />} /> {/* Add Contact Page route */}
+        
         {/* Page non trouvée */}
         <Route path="/*" element={<Pagenotfound />} />
       </Routes>
