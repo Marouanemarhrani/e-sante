@@ -1,7 +1,7 @@
 /* General footer styles */
 .footer {
-    background-color: #004D40; /* Dark green background */
-    color: white;
+    background-color: #00449d; /* Updated to the base blue color */
+    color: #fcfcfc; /* Updated to the white color */
     padding: 2rem 1rem;
     width: 100%;
     display: flex;
@@ -42,13 +42,13 @@
 }
 
 .footer-link-section ul li a {
-    color: white;
+    color: #fcfcfc; /* Updated to the white color */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .footer-link-section ul li a:hover {
-    color: #FFC107; /* Light yellow hover color */
+    color: #009acb; /* Updated to the secondary blue color */
 }
 
 /* Social icons */
@@ -59,12 +59,12 @@
 
 .social-icons a {
     font-size: 1.5rem;
-    color: white;
+    color: #fcfcfc; /* Updated to white */
     transition: color 0.3s;
 }
 
 .social-icons a:hover {
-    color: #FFC107; /* Light yellow hover color */
+    color: #009acb; /* Updated to the secondary blue color */
 }
 
 /* Copyright section */

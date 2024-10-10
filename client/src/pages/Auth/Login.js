@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Layout from "./../../components/Layout/Layout";
+import Layout2 from "./../../components/Layout/Layout2";
 import axios from "axios";
 import { useNavigate, useLocation } from 'react-router-dom';
 import toast from "react-hot-toast";
@@ -54,7 +54,7 @@ const Login = () => {
 
     return (
         <div className='bodylogin'>
-            <Layout title="Connexion">
+            <Layout2 title="Connexion">
                 <div className='login'>
                     <h1 className='h1'>Connexion à votre compte</h1>
                     <form onSubmit={handleSubmit}>
@@ -105,7 +105,7 @@ const Login = () => {
                         </div>
                     </form>
                 </div>
-            </Layout>
+            </Layout2>
         </div>
     );
 };

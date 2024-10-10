@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Layout from "../components/Layout/Layout"; // Assuming Layout is your page wrapper
 import './HomePage.css'; // Custom CSS for this page
-import apropo from "./../data/apropo.webp"
+import apropo from "./../data/apropo.webp";
+import hyd from "./../data/hyd.jpeg";
+import som from "./../data/som.png";
+import rc from "./../data/rc.png";
+import ten from "./../data/ten.webp";
 
 const HomePage = () => {
     const [tuteurMood, setTuteurMood] = useState('neutral'); // Default mood is 'neutral'
@@ -18,41 +22,11 @@ const HomePage = () => {
             <div className="mood-section">
                 <h1>Humeur de Marouane aujourd'hui</h1>
                 <div className="mood-display">
-                    <span 
-                        className={`emoji ${tuteurMood === 'excellent' ? 'selected' : ''}`} 
-                        role="img" 
-                        aria-label="excellent"
-                    >
-                        😄
-                    </span>
-                    <span 
-                        className={`emoji ${tuteurMood === 'good' ? 'selected' : ''}`} 
-                        role="img" 
-                        aria-label="good"
-                    >
-                        🥱
-                    </span>
-                    <span 
-                        className={`emoji ${tuteurMood === 'neutral' ? 'selected' : ''}`} 
-                        role="img" 
-                        aria-label="neutral"
-                    >
-                        😔
-                    </span>
-                    <span 
-                        className={`emoji ${tuteurMood === 'bad' ? 'selected' : ''}`} 
-                        role="img" 
-                        aria-label="bad"
-                    >
-                        😐
-                    </span>
-                    <span 
-                        className={`emoji ${tuteurMood === 'terrible' ? 'selected' : ''}`} 
-                        role="img" 
-                        aria-label="terrible"
-                    >
-                        🤢
-                    </span>
+                    <span className={`emoji ${tuteurMood === 'excellent' ? 'selected' : ''}`} role="img" aria-label="excellent">😄</span>
+                    <span className={`emoji ${tuteurMood === 'good' ? 'selected' : ''}`} role="img" aria-label="good">🥱</span>
+                    <span className={`emoji ${tuteurMood === 'neutral' ? 'selected' : ''}`} role="img" aria-label="neutral">😔</span>
+                    <span className={`emoji ${tuteurMood === 'bad' ? 'selected' : ''}`} role="img" aria-label="bad">😐</span>
+                    <span className={`emoji ${tuteurMood === 'terrible' ? 'selected' : ''}`} role="img" aria-label="terrible">🤢</span>
                 </div>
             </div>
 
@@ -82,11 +56,11 @@ const HomePage = () => {
                         <h3>Basic Package</h3>
                         <h4>$14.99 / month</h4>
                         <p>
-                            Constantes vitales<br/>
-                            Suivi & rappel médicamenteux<br/>
-                            Deux contacts d'urgences<br/>
-                            Suivi de l'humeur<br/>
-                            Importation de document<br/>
+                            Constantes vitales<br />
+                            Suivi & rappel médicamenteux<br />
+                            Deux contacts d'urgences<br />
+                            Suivi de l'humeur<br />
+                            Importation de document<br />
                             Reconnaissance vocale
                         </p>
                     </div>
@@ -94,12 +68,12 @@ const HomePage = () => {
                         <h3>Full Package</h3>
                         <h4>$19.99 / month</h4>
                         <p>
-                            Messagerie instantanée Patient/Tuteur<br/>
-                            Chatbot IA<br/>
-                            Six contacts d'urgences<br/>
-                            Suivi du sommeil<br/>
-                            Suivi d'hydratation<br/>
-                            Partage de document<br/>
+                            Messagerie instantanée Patient/Tuteur<br />
+                            Chatbot IA<br />
+                            Six contacts d'urgences<br />
+                            Suivi du sommeil<br />
+                            Suivi d'hydratation<br />
+                            Partage de document<br />
                             Calendrier avec rappel de rdv
                         </p>
                     </div>
@@ -113,29 +87,29 @@ const HomePage = () => {
                     <div className="metric">
                         <h3>Rythme Cardiaque</h3>
                         <p>72 bpm</p>
-                        <img src="/path/to/heart-rate-image.jpg" alt="Heart Rate" />
+                        <img src={rc} alt="Heart Rate" className="metric-image" />
                     </div>
                     <div className="metric">
                         <h3>Tension</h3>
                         <p>120/80 mmHg</p>
-                        <img src="/path/to/blood-pressure-image.jpg" alt="Blood Pressure" />
+                        <img src={ten} alt="Blood Pressure" className="metric-image" />
                     </div>
                 </div>
             </section>
 
-            {/* Sleep and Walking Data Section */}
+            {/* Sleep and Hydration Data Section */}
             <section className="activity-data">
                 <h2>Suivi de votre activité</h2>
                 <div className="activity-metrics">
                     <div className="metric">
                         <h3>Sommeil</h3>
                         <p>7 heures</p>
-                        <img src="/path/to/sleep-image.jpg" alt="Sleep" />
+                        <img src={som} alt="Sleep" className="metric-image" />
                     </div>
                     <div className="metric">
-                        <h3>Pas Quotidiens</h3>
-                        <p>10,000 pas</p>
-                        <img src="/path/to/walking-image.jpg" alt="Walking" />
+                        <h3>Suivi Hydratation</h3>
+                        <p>0.9 Litre</p>
+                        <img src={hyd} alt="Hydration" className="metric-image" />
                     </div>
                 </div>
             </section>

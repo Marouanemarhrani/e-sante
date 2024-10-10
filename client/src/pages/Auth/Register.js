@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Layout from "./../../components/Layout/Layout";
+import Layout2 from "./../../components/Layout/Layout2";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import toast from "react-hot-toast";
@@ -50,7 +50,7 @@ const Register = () => {
 
     return (
         <div className='regbody'>
-            <Layout title="Inscription">
+            <Layout2 title="Inscription">
                 <div className='register'>
                     <form onSubmit={handleSubmit}>
                         <h1 className='reg-title'>Créez votre compte</h1>
@@ -121,7 +121,7 @@ const Register = () => {
                         </div>
                     </form>
                 </div>
-            </Layout>
+            </Layout2>
         </div>
     );
 };

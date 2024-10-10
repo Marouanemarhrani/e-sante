@@ -1,77 +1,76 @@
 /* Container for the whole header */
 .header-navbar {
-    background-color: #005542;
-    padding: 1.5rem 2rem; /* Increase padding to make the header larger */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    font-size: 1.2rem; /* Increase the overall font size */
-  }
-  
+  background-color: #00449d; /* Updated to the base color from your chart */
+  padding: 1.5rem 2rem; /* Increase padding to make the header larger */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fcfcfc; /* Updated to the white color from your chart */
+  font-size: 1.2rem; /* Increase the overall font size */
+}
+
+.header-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styling for the logo */
+.header-logo {
+  font-size: 2rem; /* Increase logo font size */
+  font-weight: bold;
+  color: #fcfcfc; /* Updated to the white color */
+  text-decoration: none;
+}
+
+.header-logo:hover {
+  color: #e0e0e0; /* Light gray for hover effect */
+}
+
+/* Navigation links */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem; /* Adjust the spacing between navigation links */
+}
+
+.header-nav .nav-link {
+  color: #fcfcfc; /* Updated to the white color */
+  font-size: 1.2rem; /* Make navigation links slightly larger */
+  text-decoration: none;
+}
+
+.header-nav .nav-link:hover {
+  color: #009acb; /* Updated to the secondary color */
+}
+
+/* Auth links (Sign in / Register) */
+.header-auth {
+  display: flex;
+  gap: 2rem; /* Increase spacing between auth links */
+  align-items: center;
+}
+
+.header-auth .nav-link {
+  color: #fcfcfc; /* Updated to the white color */
+  font-size: 1.2rem; /* Increase font size of auth links */
+  text-decoration: none;
+}
+
+.header-auth .nav-link:hover {
+  color: #009acb; /* Updated to the secondary color */
+}
+
+/* Responsive handling */
+@media (max-width: 768px) {
   .header-container {
-    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-nav, .header-auth {
+    flex-direction: column;
     width: 100%;
-    justify-content: space-between;
-    align-items: center;
   }
-  
-  /* Styling for the logo */
-  .header-logo {
-    font-size: 2rem; /* Increase logo font size */
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-  }
-  
-  .header-logo:hover {
-    color: #e0e0e0;
-  }
-  
-  /* Navigation links */
-  .header-nav {
-    display: flex;
-    align-items: center;
-    gap: 2.5rem; /* Adjust the spacing between navigation links */
-  }
-  
-  .header-nav .nav-link {
-    color: white;
-    font-size: 1.2rem; /* Make navigation links slightly larger */
-    text-decoration: none;
-  }
-  
-  .header-nav .nav-link:hover {
-    color: #e0e0e0;
-  }
-  
-  /* Auth links (Sign in / Register) */
-  .header-auth {
-    display: flex;
-    gap: 2rem; /* Increase spacing between auth links */
-    align-items: center;
-  }
-  
-  .header-auth .nav-link {
-    color: white;
-    font-size: 1.2rem; /* Increase font size of auth links */
-    text-decoration: none;
-  }
-  
-  .header-auth .nav-link:hover {
-    color: #e0e0e0;
-  }
-  
-  /* Responsive handling */
-  @media (max-width: 768px) {
-    .header-container {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .header-nav, .header-auth {
-      flex-direction: column;
-      width: 100%;
-    }
-  }
-  
+}

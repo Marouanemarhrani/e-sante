@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Layout from "../components/Layout/Layout"; // Assuming Layout is your page wrapper
+import Layout2 from "../components/Layout/Layout2"; // Assuming Layout is your page wrapper
 import './Contact.css'; // Custom CSS for the page
 
 const ContactPage = () => {
@@ -27,55 +27,55 @@ const ContactPage = () => {
     };
 
     return (
-    <Layout title="Contact">
-        <h1>Chat entre Senior et Tuteur</h1>
+        <Layout2 title="Contact">
+            <div className="contact-container">
+                <h1>Chat entre Senior et Tuteur</h1>
 
-        <div className="chat-section">
-            <div className="chat-window">
-                {messages.length === 0 ? (
-                    <p>Aucun message pour le moment. Envoyez un message à votre tuteur.</p>
-                ) : (
-                    messages.map((message, index) => (
-                        <div
-                            key={index}
-                            className={`message ${message.sender === 'senior' ? 'senior-message' : 'tuteur-message'}`}
-                        >
-                            {message.text}
-                        </div>
-                    ))
-                )}
-            </div>
+                <div className="chat-section">
+                    <div className="chat-window">
+                        {messages.length === 0 ? (
+                            <p>Aucun message pour le moment. Envoyez un message à votre tuteur.</p>
+                        ) : (
+                            messages.map((message, index) => (
+                                <div
+                                    key={index}
+                                    className={`message ${message.sender === 'senior' ? 'senior-message' : 'tuteur-message'}`}
+                                >
+                                    {message.text}
+                                </div>
+                            ))
+                        )}
+                    </div>
 
-            <div className="message-input">
-                <input
-                    type="text"
-                    value={newMessage}
-                    onChange={(e) => setNewMessage(e.target.value)}
-                    placeholder="Tapez votre message..."
-                />
-                <button onClick={sendMessage}>Envoyer</button>
-            </div>
-        </div>
-
-        <div className="chatbot-section">
-            <button className="chatbot-button" onClick={toggleChatbot}>
-                {isChatbotOpen ? 'Fermer Chatbot' : 'Ouvrir Chatbot'}
-            </button>
-
-            {isChatbotOpen && (
-                <div className="chatbot-window">
-                    <iframe
-                        src="https://your-chatbot-url.com"
-                        title="Chatbot"
-                        width="100%"
-                        height="400px"
-                    />
+                    <div className="message-input">
+                        <input
+                            type="text"
+                            value={newMessage}
+                            onChange={(e) => setNewMessage(e.target.value)}
+                            placeholder="Tapez votre message..."
+                        />
+                        <button onClick={sendMessage}>Envoyer</button>
+                    </div>
                 </div>
-            )}
-        </div>
-    </Layout>
 
+                <div className="chatbot-section">
+                    <button className="chatbot-button" onClick={toggleChatbot}>
+                        {isChatbotOpen ? 'Fermer Chatbot' : 'Ouvrir Chatbot'}
+                    </button>
 
+                    {isChatbotOpen && (
+                        <div className="chatbot-window">
+                            <iframe
+                                src="https://your-chatbot-url.com"
+                                title="Chatbot"
+                                width="100%"
+                                height="400px"
+                            />
+                        </div>
+                    )}
+                </div>
+            </div>
+        </Layout2>
     );
 };
 
